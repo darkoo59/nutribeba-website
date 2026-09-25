@@ -38,19 +38,19 @@ A modern course platform built with Laravel, Inertia.js, and React. NutriBeba pr
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](docs/screenshots/home.png)
+![Home Page](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/pocetna.png)
 
 ### Course Catalog
-![Courses](docs/screenshots/courses.png)
+![Courses](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/prodavnica.png)
 
 ### Course Player
-![Course Player](docs/screenshots/course-player.png)
+![Course Player](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/player.png)
 
 ### QA Page
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/qa.png)
 
 ### Authentication
-![Login](docs/screenshots/login.png) ![Register](docs/screenshots/register.png)
+![Login](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/prijava.png) ![Register](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/registracija.png)
 
 ## 📦 Installation
 
