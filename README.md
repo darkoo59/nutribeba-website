@@ -1,58 +1,276 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# NutriBeba Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern course platform built with Laravel, Inertia.js, and React. NutriBeba provides a complete learning management system for courses with video content delivery via Google Drive integration.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Public Pages**: Home, About, Services, Contact
+- **Authentication System**: Registration, Login, Email Verification, Password Reset
+- **User Dashboard**: Personalized course overview and progress tracking
+- **Course Management**: Courses with lessons, sections, and structured content
+- **Purchase System**: Course purchases with coupon support
+- **Video Content**: Bunny.net integration for seamless video delivery
+- **Other Content**: Google Drive API integration
+- **Access Control**: Time-limited course access with automatic expiration
+- **Progress Tracking**: Lesson completion and user progress monitoring
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Backend
+- **Laravel 13.x** - PHP framework
+- **PHP 8.3+** - Programming language
+- **Laravel Sanctum** - API authentication
+- **SQLite/MySQL/PostgreSQL** - Database
 
-## Learning Laravel
+### Frontend
+- **React 18** - UI library
+- **Inertia.js 2.x** - SPA adapter
+- **Tailwind CSS 3.x** - Styling
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Headless UI** - Accessible components
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Integrations
+- **Google Drive API** - Storage and delivery
+- **Bynny.net API** - Video torage and delivery
+- **WordPress Password Hashing** - Legacy user migration
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📸 Screenshots
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Home Page
+![Home Page](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/pocetna.png)
 
-## Agentic Development
+### Course Catalog
+![Courses](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/prodavnica.png)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Course Player
+![Course Player](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/player.png)
+
+### QA Page
+![Dashboard](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/qa.png)
+
+### Authentication
+![Login](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/prijava.png) ![Register](https://github.com/darkoo59/nutribeba-website/blob/qa/public/images/docs/registracija.png)
+
+## 📦 Installation
+
+### Prerequisites
+- PHP 8.3+
+- Composer
+- Node.js 18+
+- npm or bun
+
+### Setup
 
 ```bash
-composer require laravel/boost --dev
+# Clone the repository
+git clone https://github.com/darkoo59/nutribeba-website.git
+cd nutribeba-website
 
-php artisan boost:install
+# Install PHP dependencies
+composer install
+
+# Install Node.js dependencies
+npm install --ignore-scripts
+
+# Environment setup
+cp .env.example .env
+php artisan key:generate
+
+# Database setup
+php artisan migrate --force
+
+# Build assets
+npm run build
+
+# Start development server
+composer dev
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### Environment Variables
 
-## Contributing
+```env
+APP_NAME="Nutri Beba"
+APP_ENV=dev
+APP_KEY=base64:1xGFWfG3dHDKGzFdHzKfgSSeGG4FKDJgfdGE442fFGe=
+APP_DEBUG=false
+APP_URL=https://localhost:8080
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+APP_LOCALE=sr
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=sr_RS 
 
-## Code of Conduct
+APP_MAINTENANCE_DRIVER=file
+# APP_MAINTENANCE_STORE=database
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# PHP_CLI_SERVER_WORKERS=4
 
-## Security Vulnerabilities
+BCRYPT_ROUNDS=12
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+HASH_DRIVER=wordpress
 
-## License
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=error
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=nutribeb_website
+DB_USERNAME=nutribeb_admin
+DB_PASSWORD=c,fuP@dUz)dxOSag
+
+SESSION_DRIVER=database
+SESSION_LIFETIME=120
+SESSION_ENCRYPT=false
+SESSION_PATH=/
+SESSION_DOMAIN=null
+SESSION_SAME_SITE=none
+SESSION_SECURE_COOKIE=true
+
+BROADCAST_CONNECTION=log
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=database
+
+CACHE_STORE=database
+# CACHE_PREFIX=
+
+MAIL_MAILER=smtp
+MAIL_SCHEME=null
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=test@gmail.com
+MAIL_PASSWORD="test test"
+MAIL_FROM_ADDRESS="test@gmail.com"
+MAIL_FROM_NAME="Test"
+
+VITE_APP_NAME="${APP_NAME}"
+
+# --- PAYMENT INTEGRATION ---
+PAYPAL_CLIENT_ID=test
+PAYPAL_CLIENT_SECRET=test
+PAYPAL_MODE=sandbox
+
+RAIFFEISEN_MERCHANT_ID=test
+RAIFFEISEN_TERMINAL_ID=test
+RAIFFEISEN_GATEWAY_URL=test.com
+RAIFFEISEN_PUBLIC_KEY=test.cert
+RAIFFEISEN_NOTIFY_TESTING_IP=test
+
+
+# --- GOOGLE DRIVE VIDEO STORAGE ---
+GOOGLE_DRIVE_API_KEY=test
+GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON=
+
+BUNNY_STREAM_LIBRARY_ID=xyz
+BUNNY_STREAM_SECURITY_KEY=test
+```
+
+## 🏃 Development
+
+```bash
+# Start all services (server, queue, logs, vite)
+composer dev
+
+# Run tests
+composer test
+
+# Format code
+./vendor/bin/pint
+```
+
+## 📁 Project Structure
+
+```
+app/
+├── Console/Commands/       # Artisan commands (e.g., ExpireCourseAccess)
+├── Http/
+│   ├── Controllers/        # HTTP controllers
+│   │   ├── Auth/           # Authentication controllers
+│   │   └── CourseAccessController.php
+│   ├── Middleware/         # Custom middleware
+│   └── Requests/           # Form requests
+├── Mail/                   # Mail classes
+├── Models/                 # Eloquent models
+│   ├── Course.php
+│   ├── Lesson.php
+│   ├── LessonSection.php
+│   ├── Purchase.php
+│   ├── Coupon.php
+│   ├── CourseUserAccess.php
+│   └── UserProgress.php
+├── Services/               # Business logic services
+│   └── GoogleDriveService.php
+└── Hashing/                # Custom hashers
+    └── WordPressBcryptHasher.php
+
+resources/
+├── js/
+│   ├── Pages/              # Inertia pages (React components)
+│   │   ├── Auth/           # Auth pages
+│   │   ├── Profile/        # Profile pages
+│   │   ├── Welcome.tsx
+│   │   ├── About.tsx
+│   │   ├── Services.tsx
+│   │   ├── Contact.tsx
+│   │   └── Dashboard.tsx
+│   ├── Components/         # Reusable React components
+│   ├── Layouts/            # Page layouts
+│   ├── app.tsx             # App entry point
+│   └── bootstrap.ts        # Bootstrap file
+└── css/                    # Styles
+
+routes/
+├── web.php                 # Web routes
+├── auth.php                # Auth routes
+└── console.php             # Console commands
+```
+
+## 🔐 Key Models & Relationships
+
+| Model | Description |
+|-------|-------------|
+| `Course` | Main course entity with title, price, thumbnail, Google Drive ID |
+| `Lesson` | Individual lessons within courses |
+| `LessonSection` | Sections grouping lessons |
+| `Purchase` | User course purchases |
+| `Coupon` | Discount codes for courses |
+| `CourseUserAccess` | Time-limited access grants |
+| `UserProgress` | Lesson completion tracking |
+
+## 📝 Available Commands
+
+```bash
+# Expire old course accesses
+php artisan course:expire-access
+
+# Display inspiring quote
+php artisan inspire
+```
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+composer test
+
+# Run specific test
+php artisan test --filter=CourseTest
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+For support, email darko.selakovic11@gmail.com or open an issue on GitHub.
+
+---
+
+Built with ❤️ using Laravel, Inertia.js, and React
