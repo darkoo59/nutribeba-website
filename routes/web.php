@@ -6,12 +6,19 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('Welcome');
+});
+
+Route::get('/o-meni', function () {
+    return Inertia::render('About');
+});
+
+Route::get('/usluge', function () {
+    return Inertia::render('Services');
+});
+
+Route::get('/kontakt', function () {
+    return Inertia::render('Contact');
 });
 
 Route::get('/dashboard', function () {
